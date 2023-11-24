@@ -146,7 +146,7 @@ const PostItem: React.FC<PostItemProps> = ({
                   </span>
                   <div className="p-[2px] rounded-full bg-sky-500">
                   <FaRobot color="black" /></div>
-                  <p className="text-xs ">robot</p>
+                  <p className="text-xs ">Robot</p>
                 </div>
                 <span className="text-neutral-500 text-xs md:text-sm">
                   {createdAt}
