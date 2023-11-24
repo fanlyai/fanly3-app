@@ -8,6 +8,8 @@ import { SessionProvider } from "next-auth/react";
 import EditModal from "@/components/modals/EditModal";
 import ImageModal from "@/components/modals/ImageModal";
 import CreditModal from "@/components/modals/CreditModal";
+import Head from 'next/head'
+
 
 
 
@@ -15,7 +17,9 @@ import CreditModal from "@/components/modals/CreditModal";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <SessionProvider session={pageProps.session}>
-     
+       <Head>
+        <title>Vuzz AI Social</title>
+      </Head>
       <Toaster/>
       <CreditModal/>
       <EditModal/>

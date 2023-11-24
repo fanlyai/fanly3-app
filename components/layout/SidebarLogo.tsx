@@ -10,7 +10,7 @@ const SidebarLogo = () => {
   const router = useRouter();
   return (
     <div onClick={() => router.push("/")} className="rounded-full h-14 w-16 p-4 flex items-center justify-center hover:bg-blue-300 hover:bg-opacity-10 cursor-pointer transition">
-     <div className={josefin.className}><p className=" text-3xl text-[#00AFF0] ">fanly<span className="text-white">3</span></p></div>
+     <div className={josefin.className}><p className=" text-3xl text-[#00AFF0]   pl-24 ">Vuzz<span className="text-white">AI</span></p></div>
     </div>
   );
 };

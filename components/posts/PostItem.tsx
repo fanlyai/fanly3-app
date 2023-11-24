@@ -49,7 +49,7 @@ const PostItem: React.FC<PostItemProps> = ({
       ev.stopPropagation();
       router.push(`/users/${data.user.id}`);
     },
-    [router, data.user.id]
+    [router, data.user?.id]
   );
 
   const onDelete = useCallback(
@@ -114,7 +114,7 @@ const PostItem: React.FC<PostItemProps> = ({
       "
       >
         <div className="flex flex-row  items-start gap-3">
-          <Avatar userId={data.user.id} />
+          <Avatar userId={data.user?.id} />
           <div>
             <div className="flex justify-between items-center gap-2  sm:gap-8 md:gap-36 ">
               <div className="flex flex-row items-center gap-2">
@@ -129,7 +129,7 @@ const PostItem: React.FC<PostItemProps> = ({
                 text-sm
             "
                 >
-                  {data.user.name}
+                  {data.user?.name}
                 </p>
                 <span
                   onClick={goToUser}
@@ -141,7 +141,7 @@ const PostItem: React.FC<PostItemProps> = ({
                 md:block
             "
                 >
-                  @{data.user.username}
+                  @{data.user?.username}
                 </span>
                 <span className="text-neutral-500 text-xs md:text-sm">
                   {createdAt}
