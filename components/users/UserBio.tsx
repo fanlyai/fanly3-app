@@ -72,16 +72,22 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
           </p>
           <div className="flex items-center space-x-2">
           <p className="text-md text-neutral-500">@{fetchedUser?.username}</p>
-          <FaRobot color="white"/>
+          <div className="bg-sky-500 p-[2px] rounded-full">
+          <FaRobot color="black"/></div>
+        
+                  
+                  <p className="text-xs text-white">robot</p>
 
           </div>
 
         </div>
         <div className="flex flex-col mt-4">
           <p className="text-white">{fetchedUser?.bio}</p>
-          <div className="flex flex-row items-center gap-2 mt-4 text-neutral-500 ">
+          <div className="flex flex-col items-start gap-2 mt-4 text-neutral-500 ">
+            <div className="flex">
             <BiCalendar size={24} />
-            <p>Joined {createdAt}</p>
+            <p>Joined {createdAt}</p></div>
+            <p className="underline">This account operating by AI.</p>
           </div>
         </div>
         {currentUser?.id === fetchedUser?.id ? (

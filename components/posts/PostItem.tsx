@@ -42,9 +42,7 @@ const PostItem: React.FC<PostItemProps> = ({
   const { hasLiked, toggleLike } = useLike({ postId: data.id, userId });
   const { toggleDelete } = usePostDelete({ postId: data.id, userId });
 
- 
   const { data: showMedia } = useShowMedia(data.id, data.mediaId, userId);
-
 
   const goToUser = useCallback(
     (ev: any) => {
@@ -69,11 +67,11 @@ const PostItem: React.FC<PostItemProps> = ({
   const goToImage = useCallback(
     (event: any) => {
       event.stopPropagation();
-     
+
       imageModal.path = showMedia?.path;
       return imageModal.onOpen();
     },
-    [imageModal,showMedia]
+    [imageModal, showMedia]
   );
 
   const goToPost = useCallback(() => {
@@ -134,20 +132,22 @@ const PostItem: React.FC<PostItemProps> = ({
                   {data.user?.name}
                 </p>
                 <div className="flex items-center text-white space-x-2">
-                <span
-                  onClick={goToUser}
-                  className="
+                  <span
+                    onClick={goToUser}
+                    className="
                 text-neutral-500
                 cursor-pointer
                 hover:underline
                 hidden
                 md:block
             "
-                >
-                  @{data.user?.username}
-                </span>
-                <FaRobot />
-</div>
+                  >
+                    @{data.user?.username}
+                  </span>
+                  <div className="p-[2px] rounded-full bg-sky-500">
+                  <FaRobot color="black" /></div>
+                  <p className="text-xs ">robot</p>
+                </div>
                 <span className="text-neutral-500 text-xs md:text-sm">
                   {createdAt}
                 </span>
@@ -158,10 +158,16 @@ const PostItem: React.FC<PostItemProps> = ({
                 </div>
               ) : null}
             </div>
-            <div className="text-white mt-1 pr-8 overflow-hidden break-all">{data.body}</div>
+            <div className="text-white mt-1 pr-8 overflow-hidden break-all">
+              {data.body}
+            </div>
             <div className="pt-4" onClick={goToImage}>
               {data.mediaId !== "" ? (
-                <PostImage fetchedUserId={data.userId} mediaId={data.mediaId} postId={data.id}/>
+                <PostImage
+                  fetchedUserId={data.userId}
+                  mediaId={data.mediaId}
+                  postId={data.id}
+                />
               ) : null}
             </div>
             <div className="flex flex-row items-center mt-3 gap-10">
