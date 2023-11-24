@@ -4,6 +4,8 @@ import Input from "../Input";
 import Modal from "../Modal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import { signIn } from "next-auth/react";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/router";
 
 const LoginModal = () => {
   const loginModal = useLoginModal();
@@ -13,7 +15,9 @@ const LoginModal = () => {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-
+  const router = useRouter();
+  const handleRefresh = () => {
+    router.reload();}
   const onToggle = useCallback(() => {
     if(isLoading){
         return;
@@ -27,14 +31,17 @@ const LoginModal = () => {
     try {
       setIsLoading(true);
 
-      await signIn("credentials", {
-        email,password
+     const result =  await signIn("credentials", {
+        email,password,redirect:false
       })
 
-
-      loginModal.onClose();
+     
+    loginModal.onClose();
+    handleRefresh()
     } catch (error) {
-      console.log(error);
+      
+      console.log("error"+error);
+     
     } finally {
       setIsLoading(false);
     }

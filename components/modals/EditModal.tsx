@@ -50,7 +50,7 @@ const EditModal = () => {
 
       editModal.onClose();
     } catch (error) {
-      toast.error("Something went wrong");
+      toast.error("Something went wrong. The size of image should be smaller than 1mb ");
     } finally {
       setIsLoading(false);
     }
