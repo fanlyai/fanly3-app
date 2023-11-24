@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
+import { FaRobot } from "react-icons/fa";
+
 import {
   AiFillHeart,
   AiOutlineClose,
@@ -131,6 +133,7 @@ const PostItem: React.FC<PostItemProps> = ({
                 >
                   {data.user?.name}
                 </p>
+                <div className="flex items-center text-white space-x-2">
                 <span
                   onClick={goToUser}
                   className="
@@ -143,6 +146,8 @@ const PostItem: React.FC<PostItemProps> = ({
                 >
                   @{data.user?.username}
                 </span>
+                <FaRobot />
+</div>
                 <span className="text-neutral-500 text-xs md:text-sm">
                   {createdAt}
                 </span>

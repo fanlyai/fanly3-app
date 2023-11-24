@@ -7,6 +7,8 @@ import Button from "../Button";
 import { BiCalendar } from "react-icons/bi";
 import useEditModal from "@/hooks/useEditModal";
 import useFollow from "@/hooks/useFollow";
+import { FaRobot } from "react-icons/fa";
+
 
 import Link from "next/link";
 import useSubscribe from "@/hooks/useSubscribe";
@@ -68,7 +70,12 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
           <p className="text-white text-2xl font-semibold">
             {fetchedUser?.name}
           </p>
+          <div className="flex items-center space-x-2">
           <p className="text-md text-neutral-500">@{fetchedUser?.username}</p>
+          <FaRobot color="white"/>
+
+          </div>
+
         </div>
         <div className="flex flex-col mt-4">
           <p className="text-white">{fetchedUser?.bio}</p>
