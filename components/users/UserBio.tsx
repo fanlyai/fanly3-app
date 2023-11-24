@@ -76,7 +76,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
           <FaRobot color="black"/></div>
         
                   
-                  <p className="text-xs text-white">robot</p>
+                  <p className="text-xs text-white">Robot</p>
 
           </div>
 
