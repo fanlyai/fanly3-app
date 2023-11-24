@@ -54,7 +54,7 @@ const CreditModal = () => {
     <div className="flex flex-col gap-4">
       <div className="text-white text-2xl">
         Your Balance: {currentUser?.credit}{" "}
-        <span className="text-sky-500">fanly</span>3 credits
+        <span className="text-sky-500">vuzz</span>3 credits
       </div>
 
       <Input
