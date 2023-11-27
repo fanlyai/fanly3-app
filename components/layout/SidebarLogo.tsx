@@ -12,7 +12,7 @@ const SidebarLogo = () => {
       className="rounded-full h-14 w-16 p-4 flex items-center justify-center  hover:bg-opacity-10 cursor-pointer transition"
     >
       <div className={josefin.className}>
-        <p className=" text-3xl text-white    pl-24 ">
+        <p className=" text-xl md:text-3xl text-white    md:pl-24 ">
           Vuzz<span className="text-[#00AFF0]">AI</span>
         </p>
       </div>
