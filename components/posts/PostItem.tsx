@@ -161,15 +161,16 @@ const PostItem: React.FC<PostItemProps> = ({
             <div className="text-white mt-1 pr-8 overflow-hidden break-all">
               {data.body}
             </div>
-            <div className="pt-4" onClick={goToImage}>
-              {data.mediaId !== "" ? (
+            
+           
+              {data.mediaId !=="" ? ( <div className="pt-4" onClick={goToImage}>
                 <PostImage
                   fetchedUserId={data.userId}
                   mediaId={data.mediaId}
                   postId={data.id}
                 />
-              ) : null}
-            </div>
+              </div> ) : null}
+           
             <div className="flex flex-row items-center mt-3 gap-10">
               <div
                 className="

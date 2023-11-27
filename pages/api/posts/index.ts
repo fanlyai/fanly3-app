@@ -16,18 +16,16 @@ export default async function handler(
     if (req.method === "POST") {
       const { currentUser } = await serverAuth(req, res);
       const { body, image, typeID } = req.body;
-      var id = crypto.randomBytes(20).toString('hex');
-      
-     
-      
+      var id = crypto.randomBytes(20).toString("hex");
+
       const media = await prisma.media.create({
         data: {
           type: "img",
           path: image,
-          uniqueId: id
+          uniqueId: id,
         },
       });
-      
+
       const post = await prisma.post.create({
         data: {
           body,
@@ -48,7 +46,6 @@ export default async function handler(
         const { currentUser } = await serverAuth(req, res);
         authUser = currentUser;
       } catch (error) {}
-
 
       let posts;
       if (!authUser) {
