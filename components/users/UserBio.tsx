@@ -44,7 +44,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
         {currentUser?.id === userId ? (
           <div className="flex gap-2">
             <Button secondary label="Edit" onClick={editModal.onOpen} />
-            <Button secondary label={"Credit: " + currentUser?.credit} onClick={creditModal.onOpen} />
+            <Button secondary label={"Buy Key: " + currentUser?.credit} onClick={creditModal.onOpen} />
           </div>
         ) : (
           <div className="flex justify-center items-center md:flex-row flex-col gap-4">
@@ -134,7 +134,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
                   onClick={creditModal.onOpen}
                   className="text-neutral-500 cursor-pointer"
                 >
-                  Credit +
+                  Key +
                 </div>
               </div>
             </div>

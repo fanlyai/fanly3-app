@@ -29,7 +29,6 @@ const Modal: React.FC<ModalProps> = ({
     if (disabled) {
       return;
     }
-
     onClose();
   }, [disabled, onClose]);
 
